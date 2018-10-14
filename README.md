@@ -57,7 +57,17 @@ docker run -ti --rm livelace/opennlp-models --version 1.8.4 --lang ru --entity c
 
 ```bash
 user@localhost ~ $ docker run -ti --rm livelace/opennlp-models --version 1.8.4 --lang ru --entity combined
-Loading Token Name Finder model ... done (0.276s)
+INFO: Model information:
+
+date: 1656
+location: 6007
+money: 528
+organization: 4326
+person: 4366
+time: 17
+sentence: 8520
+
+Loading Token Name Finder model ... done (0.273s)
 Центральный комитет Коммунистической партии Китая официально объявил о расследовании в отношении главы Интерпола и по совместительству замминистра общественной безопасности КНР Мэна Хунвэя, которого подозревают в нарушении закона.
 <START:organization> Центральный комитет Коммунистической партии Китая <END> официально объявил о расследовании в отношении главы <START:organization> Интерпола <END> и по совместительству замминистра общественной безопасности <START:location> КНР <END> <START:person> Мэна Хунвэя, <END> которого подозревают в нарушении закона.
 ```
