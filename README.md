@@ -8,10 +8,12 @@
 Модели созданы на общедоступном материале новостных агентств:  
   
 1. [Ведомости](https://www.vedomosti.ru/)
-2. [Известия](https://iz.ru/) 
-3. [Интерфакс](http://www.interfax.ru/) 
-4. [РИА Новости](https://ria.ru/)
-5. [ТАСС](http://tass.ru)  
+2. [ИА REGNUM](https://regnum.ru)  
+3. [Известия](https://iz.ru/) 
+4. [Интерфакс](http://www.interfax.ru/) 
+5. [РИА Новости](https://ria.ru/)
+6. [ТАСС](http://tass.ru)  
+
   
 
 Сбор данных осуществляется с помощью [mosquito](https://github.com/livelace/mosquito).  
