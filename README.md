@@ -1,8 +1,3 @@
-Обновления (08.10.2018):
-
-1. Теперь все модели распространяются в [Docker контейнере](https://hub.docker.com/r/livelace/opennlp-models/).
-2. Модели собираются (единый набор исходных данных) для всех версии OpenNLP (быстрое сравнение качества распознавания между версиями).
-<br><br>
 #### Автоматически обновляемые модели [OpenNLP](https://opennlp.apache.org/) для русского языка.
 
 Модели созданы на общедоступном материале новостных агентств:  
@@ -18,39 +13,27 @@
 
 Сбор данных осуществляется с помощью [mosquito](https://github.com/livelace/mosquito).  
 Разметка тегов осуществляется с помощью [ner-tagger](https://github.com/livelace/ner-tagger).
-<br><br><br>
-
-| Название модели | Краткое описание | Примеры сущностей |
-|----------|----|----|
-|common_combined.txt.bin |Модель для распознавания всех типов сущностей. |- |
-|common_date.txt.bin |Модель для распознавания дат. |9 мая 1945<br>2018<br>декабре прошлого года |
-|common_location.txt.bin |Модель для распознавания месторасположений. |Россия<br>Парасельские острова<br>деревня Альбибен |
-|common_money.txt.bin |Модель для распознавания денежных единиц. |2,5 млрд рублей<br>15 миллиардов долларов<br>2$ млн |
-|common_organization.txt.bin |Модель для распознавания организаций. |Госдума<br>ФКУ Упрдор "Тамань"<br>South China Morning Post |
-|common_person.txt.bin |Модель для распознавания персон. |Хуан Антонио Пицци<br>Вайнштейн<br>Афанасьев-Кадомцев |
-|common_sentence.txt.bin |Модель для распознавания границ предложений. |- |
-|common_time.txt.bin |Модель для распознавания времени. |20:30<br>16:30 мск<br>00:00 |
-
+<br>
 
 # Быстрый старт:
 
 Отображение справки:
 
 ```bash
-user@localhost ~ $ docker run -ti --rm livelace/opennlp-models
+user@localhost ~ $ docker run -ti --rm livelace/opennlp-models:1.8.4
 This container intended for quick evaluation of OpenNLP models for Russian language whose based on various news feeds.
 
 For more details see: https://github.com/livelace/opennlp-models
 
 Usage:
 
---version 1.5.3|1.6.0|1.7.0|1.7.1|1.7.2|1.8.0|1.8.2|1.8.3|1.8.4|1.9.0. Set version of OpenNLP.
---lang ru|en. Set language of a model.
---entity combined|date|location|money|organization|person|time. Set entity type.
+--type news. Model type.
+--lang ru. Model language.
+--entity combined|date|event|facility|geopolitical|location|money|organization|person|time. Entity type.
 
 Example:
 
-docker run -ti --rm livelace/opennlp-models --version 1.8.4 --lang ru --entity combined
+docker run -ti --rm livelace/opennlp-models:1.8.4 --type news --lang ru --entity combined
 
 ... write your sentence
 ```
@@ -58,18 +41,21 @@ docker run -ti --rm livelace/opennlp-models --version 1.8.4 --lang ru --entity c
 Непосредственный запуск TokenNameFinder:
 
 ```bash
-user@localhost ~ $ docker run -ti --rm livelace/opennlp-models --version 1.8.4 --lang ru --entity combined
-INFO: Model information:
+user@localhost ~ $ docker run -ti --rm livelace/opennlp-models:1.8.4 --type news --lang ru --entity combined
+INFO: Entities information:
 
-date: 1656
-location: 6007
-money: 528
-organization: 4326
-person: 4366
-time: 17
-sentence: 8520
+date: 3286
+event: 405
+facility: 500
+geopolitical: 5726
+location: 693
+money: 577
+organization: 4760
+person: 4582
+time: 51
+sentence: 9057
 
-Loading Token Name Finder model ... done (0.273s)
-Центральный комитет Коммунистической партии Китая официально объявил о расследовании в отношении главы Интерпола и по совместительству замминистра общественной безопасности КНР Мэна Хунвэя, которого подозревают в нарушении закона.
-<START:organization> Центральный комитет Коммунистической партии Китая <END> официально объявил о расследовании в отношении главы <START:organization> Интерпола <END> и по совместительству замминистра общественной безопасности <START:location> КНР <END> <START:person> Мэна Хунвэя, <END> которого подозревают в нарушении закона.
+Loading Token Name Finder model ... done (0.365s)
+Ранее МВД по региону сообщало, что около 6.00 мск в Орске на перекрестке улиц Талалихина и Деповской столкнулись легковой автомобиль "Лада Ларгус" и маршрутная "Газель".
+Ранее <START:ORG> МВД по региону <END> сообщало, что около <START:TIME> 6.00 мск <END> в <START:GPE> Орске <END> <START:LOC> на перекрестке улиц Талалихина и Деповской <END> столкнулись легковой автомобиль "Лада <START:PER> Ларгус" <END> и маршрутная "Газель"
 ```
