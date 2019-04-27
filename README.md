@@ -50,7 +50,7 @@ docker run -ti --rm livelace/opennlp-models:1.8.4 --mode sentence --type news --
 ... write sentences
 ```
 
-**Распознование именовынных сущностей:**
+**Распознавание именовынных сущностей:**
 
 ```bash
 user@localhost ~ $ docker run -ti --rm livelace/opennlp-models:1.8.4  --mode ner --type news --lang ru --entity combined
@@ -72,7 +72,7 @@ Loading Token Name Finder model ... done (0.383s)
 <START:PER> Приговор Марии Бутиной <END> имеет антиправовой характер, он доказывает, что <START:GPE> США <END> ради геополитических интересов готовы нарушать фундаментальные принципы построения своей правовой системы, заявил <START:ORG> РИА Новости <END> председатель комитета <START:ORG> Совета Федерации <END> по конституционному законодательству <START:PER> Андрей Клишас. <END>
 ```
 
-**Распознование границ предложений:**
+**Распознавание границ предложений:**
 ```bash
 user@localhost ~ $ docker run -ti --rm livelace/opennlp-models:1.8.4  --mode sentence --type news --lang ru             
 INFO: Entities information:
