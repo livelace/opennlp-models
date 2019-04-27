@@ -50,7 +50,7 @@ docker run -ti --rm livelace/opennlp-models:1.8.4 --mode sentence --type news --
 ... write sentences
 ```
 
-**Распознавание именовынных сущностей:**
+**Распознавание именованных сущностей:**
 
 ```bash
 user@localhost ~ $ docker run -ti --rm livelace/opennlp-models:1.8.4  --mode ner --type news --lang ru --entity combined
