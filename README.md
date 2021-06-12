@@ -20,10 +20,10 @@
 **Отображение справки:**
 
 ```bash
-user@localhost ~ $ docker run -ti --rm livelace/opennlp-models:1.8.4
+user@localhost ~ $ docker run -ti --rm ghcr.io/livelace/opennlp-models:1.8.4
 This container intended for quick evaluation of OpenNLP models for Russian language whose based on various news feeds.
 
-For more details see: https://github.com/livelace/opennlp-models
+For more details see: https://github.com/ghcr.io/livelace/opennlp-models
 
 Usage:
 
@@ -38,14 +38,14 @@ Usage:
 
 Named entities recognition mode:
 
-docker run -ti --rm livelace/opennlp-models:1.8.4 --mode ner --type news --lang ru --entity combined
+docker run -ti --rm ghcr.io/livelace/opennlp-models:1.8.4 --mode ner --type news --lang ru --entity combined
 
 ... write sentences
 
 
 Sentence detection mode:
 
-docker run -ti --rm livelace/opennlp-models:1.8.4 --mode sentence --type news --lang ru
+docker run -ti --rm ghcr.io/livelace/opennlp-models:1.8.4 --mode sentence --type news --lang ru
 
 ... write sentences
 ```
@@ -53,7 +53,7 @@ docker run -ti --rm livelace/opennlp-models:1.8.4 --mode sentence --type news --
 **Распознавание именованных сущностей:**
 
 ```bash
-user@localhost ~ $ docker run -ti --rm livelace/opennlp-models:1.8.4  --mode ner --type news --lang ru --entity combined
+user@localhost ~ $ docker run -ti --rm ghcr.io/livelace/opennlp-models:1.8.4  --mode ner --type news --lang ru --entity combined
 INFO: Entities information:
 
 date: 3433
@@ -74,7 +74,7 @@ Loading Token Name Finder model ... done (0.383s)
 
 **Распознавание границ предложений:**
 ```bash
-user@localhost ~ $ docker run -ti --rm livelace/opennlp-models:1.8.4  --mode sentence --type news --lang ru             
+user@localhost ~ $ docker run -ti --rm ghcr.io/livelace/opennlp-models:1.8.4  --mode sentence --type news --lang ru             
 INFO: Entities information:
 
 date: 3433
