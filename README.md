@@ -11,8 +11,8 @@
 
   
 
-Сбор данных осуществляется с помощью [gosquito](https://github.com/livelace/gosquito).  
-Разметка тегов осуществляется с помощью [digator](https://github.com/livelace/digator).
+Сбор данных осуществляется при помощи: [gosquito](https://github.com/livelace/gosquito)  
+Разметка тегов осуществляется при помощи: [digator](https://github.com/livelace/digator)  
 <br>
 
 # Быстрый старт:
