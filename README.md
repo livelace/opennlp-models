@@ -20,7 +20,7 @@
 **Отображение справки:**
 
 ```bash
-docker run -ti --rm ghcr.io/livelace/opennlp-models:1.8.4
+user@localhost ~ $ docker run -ti --rm ghcr.io/livelace/opennlp-models:1.8.4
 This container intended for quick evaluation of OpenNLP models for Russian language whose based on various news feeds.
 
 For more details see: https://github.com/livelace/opennlp-models
@@ -41,7 +41,7 @@ docker run -ti --rm ghcr.io/livelace/opennlp-models:1.8.4 --type news --lang ru 
 **Распознавание именованных сущностей:**
 
 ```bash
-docker run -ti --rm ghcr.io/livelace/opennlp-models:1.8.4 --type news --lang ru --entity all
+user@localhost ~ $ docker run -ti --rm ghcr.io/livelace/opennlp-models:1.8.4 --type news --lang ru --entity all
 INFO: Type here: 
 Loading Token Name Finder model ... done (0.312s)
 Приговор Марии Бутиной имеет антиправовой характер, он доказывает, что США ради геополитических интересов готовы нарушать фундаментальные принципы построения своей правовой системы, заявил РИА Новости председатель комитета Совета Федерации по конституционному законодательству Андрей Клишас.
