@@ -12,7 +12,7 @@
   
 
 Сбор данных осуществляется при помощи: [gosquito](https://github.com/livelace/gosquito)  
-Разметка тегов осуществляется при помощи: [digator](https://github.com/livelace/digator)  
+Разметка тегов осуществляется при помощи: [digator-opennlp + digator-label-studio](https://github.com/livelace/digator)  
 <br>
 
 # Быстрый старт:
@@ -20,7 +20,7 @@
 **Отображение справки:**
 
 ```bash
-user@localhost ~ $ docker run -ti --rm ghcr.io/livelace/opennlp-models:1.8.4
+user@localhost ~ $ docker run -ti --rm ghcr.io/livelace/opennlp-models:1.9.3
 This container intended for quick evaluation of OpenNLP models for Russian language whose based on various news feeds.
 
 For more details see: https://github.com/livelace/opennlp-models
@@ -33,7 +33,7 @@ Usage:
 
 Named entities recognition mode:
 
-docker run -ti --rm ghcr.io/livelace/opennlp-models:1.8.4 --type news --lang ru --entity all
+docker run -ti --rm ghcr.io/livelace/opennlp-models:1.9.3 --type news --lang ru --entity all
 
 ... write sentences
 ```
@@ -41,9 +41,9 @@ docker run -ti --rm ghcr.io/livelace/opennlp-models:1.8.4 --type news --lang ru 
 **Распознавание именованных сущностей:**
 
 ```bash
-user@localhost ~ $ docker run -ti --rm ghcr.io/livelace/opennlp-models:1.8.4 --type news --lang ru --entity all
+user@localhost ~ $ docker run -ti --rm ghcr.io/livelace/opennlp-models:1.9.3 --type news --lang ru --entity all
 INFO: Type here: 
 Loading Token Name Finder model ... done (0.312s)
 Приговор Марии Бутиной имеет антиправовой характер, он доказывает, что США ради геополитических интересов готовы нарушать фундаментальные принципы построения своей правовой системы, заявил РИА Новости председатель комитета Совета Федерации по конституционному законодательству Андрей Клишас.
-<START:PER> Приговор Марии Бутиной <END> имеет антиправовой характер, он доказывает, что <START:GPE> США <END> ради геополитических интересов готовы нарушать фундаментальные принципы построения своей правовой системы, заявил <START:ORG> РИА Новости <END> председатель комитета <START:ORG> Совета Федерации <END> по конституционному законодательству <START:PER> Андрей Клишас. <END>
+Приговор <START:PER> Марии Бутиной <END> имеет антиправовой характер, он доказывает, что <START:GPE> США <END> ради геополитических интересов готовы нарушать фундаментальные принципы построения своей правовой системы, заявил <START:ORG> РИА Новости <END> председатель комитета <START:ORG> Совета Федерации <END> по конституционному законодательству <START:PER> Андрей Клишас. <END>
 ```
